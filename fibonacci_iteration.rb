@@ -4,7 +4,7 @@ def fibs(n)
     if i == 0 || i == 1
       fib_array.push(i)
     else
-      fib_array.push((i-1 + i-2))
+      fib_array.push((fib_array[i-1])+(fib_array[i-2]))
     end
   end
   fib_array
