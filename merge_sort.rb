@@ -10,7 +10,7 @@ def merge_sort(array)
   left_sorted = merge_sort(left)
   right_sorted = merge_sort(right)
   i, j = 0
-  while left_sorted && right_sorted
+  while i < left_sorted && j < right_sorted
     if left_sorted[i] < right_sorted[j]
       sorted_array << left_sorted[i]
       i += 1
@@ -18,9 +18,9 @@ def merge_sort(array)
       sorted_array << right_sorted[j]
       j += 1
     end
-    if left_sorted.nil?
+    if i >= left_sorted.length
       sorted_array << right_sorted
-    elsif right_sorted.nil?
+    elsif j >= right_sorted.length
       sorted_array << left_sorted
     end
   end
